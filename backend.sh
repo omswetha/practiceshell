@@ -24,4 +24,4 @@ mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pExpenseApp@1 < /app/schema/backend.sq
 
 systemctl daemon-reload
 systemctl enable backend
-systemctl retart backend
+systemctl restart backend
