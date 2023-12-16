@@ -51,15 +51,18 @@ if [ $? -ne 0 ]; then
  fi
 fi
 
+if [ ! -d /app ]; then
 echo -e "${colour} creating the folder /app \e[0m"
 mkdir /app &>>log_file
-if [ $? -eq 0 ]; then
-  echo success
-  echo -e "\e[32m SUCCESS \e[0m"
-else
-  echo failure
-  echo -e "\e[32m FAILURE \e[0m"
+ if [ $? -eq 0 ]; then
+   echo success
+   echo -e "\e[32m SUCCESS \e[0m"
+ else
+   echo failure
+   echo -e "\e[32m FAILURE \e[0m"
+ fi
 fi
+
 echo -e "${colour} creating the folder /app \e[0m"
 rm -rf /app/* &>>log_file
 echo -e "${colour} download & extract the backend zip file \e[0m"
