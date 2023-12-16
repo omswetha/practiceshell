@@ -1,6 +1,13 @@
 log_file=/tmp/expense.log
 colour="\e[36m"
+
+if [ -z $0 ]; then
+  echo password input is missing
+  exit
+fi
+
 MYSQL_ROOT_PASSWORD=$1
+
 
 echo -e "${colour} disable the nodejs \e[0m"
 dnf module disable nodejs -y &>>log_file
