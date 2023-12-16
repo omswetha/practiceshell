@@ -1,14 +1,4 @@
-log_file=/tmp/expense.log
-colour="\e[36m"
-
-status_check() {
-if [ $? -eq 0 ]; then
-  echo -e "\e[32m SUCCESS \e[0m"
-else
-  echo -e "\e[32m FAILURE \e[0m"
-fi
-
-}
+source common.sh
 
 echo -e "${colour} Installing nginx \e[0m"
 dnf install nginx -y &>>log_file
