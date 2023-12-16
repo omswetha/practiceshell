@@ -1,5 +1,6 @@
 log_file=/tmp/expense.log
 colour="\e[36m"
+MYSQL_ROOT_PASSWORD=$1
 
 echo -e "${colour} disable the nodejs \e[0m"
 dnf module disable nodejs -y &>>log_file
@@ -91,7 +92,7 @@ else
   echo -e "\e[32m FAILURE \e[0m"
 fi
 echo -e "${colour} mysql username \e[0m"
-mysql -h mysql-dev.osdevops99.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>log_file
+mysql -h mysql-dev.osdevops99.online -uroot -p${MYSQL_ROOT_PASSWORD} < /app/schema/backend.sql &>>log_file
 if [ $? -eq 0 ]; then
   echo -e "\e[32m SUCCESS \e[0m"
 else
