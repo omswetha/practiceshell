@@ -37,8 +37,9 @@ else
   echo failure
   echo -e "\e[32m FAILURE \e[0m"
 fi
+
 id expense &>>$log_file
-if [ $? -ne 0]; then
+if [ $? -ne 0 ]; then
  echo -e "${colour} adding the expense file \e[0m"
  useradd expense &>>log_file
  if [ $? -eq 0 ]; then
