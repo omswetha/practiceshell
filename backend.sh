@@ -19,6 +19,8 @@ echo $?
 echo -e "${colour} creating the folder /app \e[0m"
 mkdir /app &>>log_file
 echo $?
+echo -e "${colour} creating the folder /app \e[0m"
+rm -rf /app/* &>>log_file
 echo -e "${colour} download & extract the backend zip file \e[0m"
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip &>>log_file
 echo $?
